@@ -151,7 +151,8 @@ if(isset($_GET['delete'])){
          while($fetch_products = $select_products->fetch(PDO::FETCH_ASSOC)){ 
    ?>
    <div class="box">
-      <img src="../uploaded_img/<?= $fetch_products['image_01']; ?>" alt="">
+   <img src="../uploaded_img/<?= htmlspecialchars($fetch_products['image_01']); ?>" alt="<?= htmlspecialchars($fetch_products['name']); ?>">
+
       <div class="name"><?= $fetch_products['name']; ?></div>
       <div class="price">Rs<span><?= $fetch_products['price']; ?></span>/-</div>
       <div class="details"><span><?= $fetch_products['details']; ?></span></div>
